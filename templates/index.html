@@ -5,8 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Predict how much your house is worth</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <title>Predict if there is a anomaly</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
 </head>
 
 <body>
@@ -15,100 +17,101 @@
     {% if pred: %}
          <p>Your house will probably be valued at: ${{pred}}</p>
     {% endif %}
-
+    <br><br>
     <div class="jumbotron text-center">
-      <h1>Predict how much your house is worth</h1>
+      <h1>Predict if there is an anomaly</h1>
     </div>
 
     <br><br>
 
     <form action="/get-user-data" method="POST">
-        <input type="submit" value="get prediction">
+        <input type="submit" value="get Result">
 
         <br><br>
-        <label for="year_built">year_built</label>
-        <input type="number" name="year_built" id="year_built" value="2009">
-        
-        <br><br>
-
-        <label for="stories">stories</label>
-        <input type="number" name="stories" id="stories" value="3">
+        <label for="age">age</label>
+        <input type="number" name="age" id="age" value="40">
         
         <br><br>
 
-        <label for="num_bedrooms">num_bedrooms</label>
-        <input type="number" name="num_bedrooms" id="num_bedrooms" value="7">
+        <label for="sex">sex</label>
+        <input type="number" name="sex" id="sex" value="1">
+        
+        <br><br>
+
+        <label for="height">height</label>
+        <input type="number" name="height" id="height" value="180">
         
         <br><br>
         
-        <label for="full_bathrooms">full_bathrooms</label>
-        <input type="number" name="full_bathrooms" id="full_bathrooms" value="4">
+        <label for="weight">weight</label>
+        <input type="number" name="weight" id="weight" value="4">
         
         <br><br>
         
-        <label for="half_bathrooms">half_bathrooms</label>
-        <input type="number" name="half_bathrooms" id="half_bathrooms" value="4">
+        <label for="QRS_duration">QRS_duration</label>
+        <input type="number" name="QRS_duration" id="QRS_duration" value="85">
         
         <br><br>
         
-        <label for="livable_sqft">livable_sqft</label>
-        <input type="number" name="livable_sqft" id="livable_sqft" value="10000">
+        <label for="PR">PR</label>
+        <input type="number" name="PR" id="PR" value="174">
         
         <br><br>
         
-        <label for="total_sqft">total_sqft</label>
-        <input type="number" name="total_sqft" id="total_sqft" value="11000">
+        <label for="QT">QT</label>
+        <input type="number" name="QT" id="QT" value="400">
         
         <br><br>
         
-        <label for="garage_sqft">garage_sqft</label>
-        <input type="number" name="garage_sqft" id="garage_sqft" value="1000">
+        <label for="T">T</label>
+        <input type="number" name="T" id="T" value="150">
         
         <br><br>
         
-        <label for="carport_sqft">carport_sqft</label>
-        <input type="number" name="carport_sqft" id="carport_sqft" value="500">
+        <label for="P">P</label>
+        <input type="number" name="P" id="P" value="39">
         
         <br><br>
         
-        <label for="has_fireplace">has_fireplace</label>
-        <input type="checkbox" name="has_fireplace" id="has_fireplace" checked>
+        <label for="aQRST">aQRST</label>
+        <input type="number" name="aQRST" id="aQRST" value="25">
 
         <br> <br>
 
-        <label for="has_pool">has_pool</label>
-        <input type="checkbox" name="has_pool" id="has_pool" checked>
+        <label for="J">J</label>
+        <input type="number" name="J" id="J" value="53">
 
         <br> <br>
 
-        <label for="has_central_heating">has_central_heating</label>
-        <input type="checkbox" name="has_central_heating" id="has_central_heating" checked>
+        <label for="heart_rate">heart_rate</label>
+        <input type="number" name="heart_rate" id="heart_rate" value="60">
 
         <br> <br>
 
-        <label for="has_central_cooling">has_central_cooling</label>
-        <input type="checkbox" name="has_central_cooling" id="has_central_cooling" checked>
-        <br> <br>
-
-        <label for="garage_type">garage_type</label>
-        <select id="garage_type" name="garage_type">
-          <option value="attached" selected="selected">attached</option>
-          <option value="detached">detached</option>
-          <option value="none">none</option>
-        </select>
+        <label for="wQ">wQ</label>
+        <input type="number" name="wQ" id="wQ" value="25">
 
         <br> <br>
 
-        <label for="city">what city are you in</label>
-        <select id="city" name="city">
-          <option value="Amystad">Amystad</option>
-          <option value="Brownport">Brownport</option>
-          <option value="Chadstad" selected="selected">Chadstad</option>
-          <option value="Clarkberg">Clarkberg</option>
-          <option value="Coletown">Coletown</option>
-          <option value="Davidfort">Davidfort</option>
-          <option value="Davidtown">Davidtown</option>
-        </select>
+        <label for="wR">wR</label>
+        <input type="number" name="wR" id="wR" value="25">
+
+        <br> <br>
+
+        <label for="wS">wS</label>
+        <input type="number" name="wS" id="wS" value="25">
+
+        <br> <br>
+
+        <label for="wR_">wR_</label>
+        <input type="number" name="wR_" id="wR_" value="25">
+
+        <br> <br>
+
+
+
+
+
 
     </form>
 
