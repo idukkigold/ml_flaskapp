@@ -1,11 +1,11 @@
-from flask import Flask, render_template, jsonify, redirect, request
+from flask import Flask, render_template,request
 from sklearn.externals import joblib
 
 app = Flask(__name__)
 
 @app.route("/", methods=['GET'])
 def index():
-    return render_template("index.html") 
+    return render_template("index.html")
 
 
 @app.route('/get-user-data', methods=['POST'])
@@ -49,7 +49,7 @@ def predict_stuff():
         # Since we are only predicting the price of one house, just look at the first prediction returned
         predicted_value = predicted_value[0]
         print(predicted_value)
-        return render_template("index.html", pred=predicted_value) 
+        return render_template("index.html", pred=predicted_value)
 
 if __name__ == "__main__":
     app.run()
